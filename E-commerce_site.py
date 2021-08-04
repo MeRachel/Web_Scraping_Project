@@ -99,7 +99,7 @@ while True:
                       'Battery_Life':battery_life, 'Operating_System':os, 'Original_Price':ori_price, 'Discount_Price':sell_price, 'Ratings':rating},ignore_index=True )
         
         driver.back()
-       
+# MOVE TO THE NEXT PAGE IF ANY       
     try:
         s=BeautifulSoup(driver.page_source, 'lxml')    
         ast=s.find('ul',class_='a-pagination')
@@ -111,5 +111,5 @@ while True:
     except:
         break
   
-
+# SAVE THE DATA IN A '.csv' FORMAT
 df.to_csv('E:\SPYDER\Project_Datasets\E-commerce_site.csv',sep=';')
